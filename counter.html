@@ -1,0 +1,39 @@
+<html>
+	<body>
+		<script type="text/javascript">
+			function makeCounter() {
+
+				var countValue = 1;
+  
+				function counter() {
+					countValue++;
+				}
+  
+				counter.set = function(newValue) {
+					countValue = newValue;
+				};
+  
+				counter.reset = function() {
+					countValue = 1;
+				};
+  
+				counter.get = function(){
+					return countValue;
+				};
+
+				return counter;
+			}		
+			
+			var counter1 = makeCounter();
+			counter1();			
+			console.log(counter1.get());
+			counter1.set(10);
+			counter1();
+			console.log(counter1.get());
+			console.log(counter1());
+			counter1.reset();
+			console.log(counter1.get());
+			
+		</script>
+	</body>
+</html>
